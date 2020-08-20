@@ -8,7 +8,7 @@ $(function(){
     var speed = 550; // ミリ秒で記述
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top - 200;
+    var position = target.offset().top - 120;
     $('body,html').animate({
       scrollTop: position
     }, speed, 'swing');
