@@ -1,0 +1,646 @@
+@charset "utf-8";
+@import "_animation";
+@import "_mixin";
+@import "_variable";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: $nomalFont;
+}
+html{
+  font-size: 62.5%;
+}
+a{
+  color: $nomalTextColor;
+  font-family: $gothic;
+}
+#top{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .topHeader{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000000e7;
+    padding: 50px 30px;
+    span{
+      color: #fff;
+      line-height: 10px;
+      font-family: $gothic;
+    }
+  }
+  .topContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    .topContents{
+      position: relative;
+      width: 50%;
+      height: 50%;
+      &:nth-child(1){
+        border-bottom: 0.2px solid #fff;
+      }
+      &:nth-child(2){
+        border-bottom: 0.2px solid #fff;
+      }
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        &::before{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          z-index: 1;
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: #000000f8;
+          transition: .3s;
+        }
+        img{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: contain; 
+          transform: scale(0.5,0.5);
+          transition: .1s;
+          filter: blur(3px);
+        }
+        p{
+          position: absolute;
+          z-index: 6;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          font-size: 1.1rem;
+          font-family: $gothic;
+          color: #cccccc;
+          text-align: center;
+          i{
+            font-size: 50px;
+          }
+        }
+        &:hover{
+          &::before{
+            width: 150px;
+            height: 150px;
+            transition: .8s;
+            background-color: #000000d3;
+            transform: translate(-50%,-50%) rotateX(225deg);
+            transform-origin: center;
+          }
+          img{
+            transition: .3s;
+            transform: scale(0.9,0.9);
+            filter: blur(0px);
+          }
+          p{
+            color: #eeeeee;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// ////////////////////////////////下層ページ共通//////////////////////////////////////////////
+.container{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 80px 0.5fr 1fr;
+  grid-template-rows: 40vh auto;
+  grid-template-areas: 
+   " nav logo main "
+   " nav img  main "
+  ;
+}
+//ヘッダー//
+.header{
+  grid-area: logo;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $mainColor;
+  .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 20px;
+    font-family: $gothic;
+  }
+  .logoText{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+    color: #a3a3a3;
+    font-size: 13px;
+  }
+}
+
+//ナヴィゲーション//
+.gnav{
+  grid-area: nav;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  &__mainNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    background-color: $gnavColor;
+    &__nav1{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom: none;
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(-80px);
+        transition: .3s;
+      }
+      &:last-child{
+        margin-top: auto;
+        border: none;
+        background-color:#2e2d2d;
+        &:hover{
+          background-color: yellow;
+        }
+      }
+      i{
+        margin-top: 20px;
+        width: 100%;
+        font-size: 25px;
+      }
+      a{
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        height: 80px;
+        font-size: 10px;
+        line-height: 25px;
+        color: #fff;
+      }
+      &:hover{
+        i,a{
+          color: $gnavColor;
+          transition: .3s;
+        }
+        &::before{
+          transform: translateX(0);
+        }
+        .gnav__subNav{
+          display: flex;
+          position: absolute;
+          top: -0.7px;
+          left: 79px;
+          background-color: $subNavColor;
+          &__nav2{
+            a{
+              position: relative;
+              color: #fff;
+              background-color: $subNavColor;
+              display: inline-block;
+              width: 90px;
+              height: 80px;
+              padding-top: 30px;
+              line-height: 10px;
+              &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #ffffff21;
+                transform: scale(0,0);
+                transform-origin: center;
+                transition: .3s;
+              }//before
+            }
+            &:hover{
+              a{
+                color: yellow;
+                // color: $gnavColor;
+                &::before{
+                  transform: scale(1,1);
+                  transition: .3s;
+                }
+              }
+            }
+          }
+        }
+      }//hover
+    }
+  }
+  &__subNav{
+    display: none;
+  }
+}
+
+//ページタイトル//
+.pageTitle{
+  grid-area: img;
+  position: fixed;
+  z-index: -1;
+  top: 450px;
+  left: 16.9%;
+  width: calc( 100% / 3 );
+  height: 50vh;
+  img{
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 23%;
+  }
+  &__heading{
+    font-size: 3.5rem;
+  }
+  &__text{
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+//メイン//
+.contentsArea{
+  grid-area: main;
+  width: 100%;
+  height: auto;
+  &__contents{
+    width: 100%;
+    background-color: #fff;
+    &__tabNav{
+      position: fixed;
+      z-index: 100;
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      &_tab{
+        position: relative;
+        width: 30%;
+        a{
+          background-color: $mainColor;
+          width: 100%;
+          display: inline-block;
+          text-align: center;
+          padding: 10px 0;
+          color: #fff;
+          font-size: 1.2rem;
+          &:before,
+          &:after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: #dddddd;
+            transition: .3S;
+          }
+          &:before{
+            top: 0;
+            left: 0;
+          }
+          &:after{
+            bottom: 0;
+            left: 0;
+          }
+          .line:before,
+          .line:after{
+            transition: .3S;
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 0;
+            background-color: #f1f1f1;
+          }
+          .line:before{
+            top: 0;
+            left: 0;
+          }
+          .line:after{
+            top: 0;
+            right: 0;
+          }
+        }
+        &:hover a:before,
+        &:hover a:after{
+          transition: .3S;
+          width: 100%;
+        }
+        &:hover .line:before,
+        &:hover .line:after{
+          transition: .3S;
+          height: 100%;
+        }
+      }
+      &_tab{
+        a.show{
+          color: $mainColor;
+          background-color: #fff;
+        }
+      }
+    }
+    &__mainContents{
+      width: 100%;
+      // max-width: 600px;
+      background-color: #fff;
+      padding: 100px 40px;
+      .contentsHeading{
+        position: relative;
+        margin-left: 40px;
+        font-family: $gothic;
+        font-size: 2.1rem;
+        &::before{
+          position: absolute;
+          top: 0;
+          left: -25px;
+          content: '';
+          width: 10px;
+          height: 100%;
+          background-color: $mainColor;
+        }
+      }
+      .contentsSubheading{
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-left: 40px;
+        margin-bottom: 40px;
+      }
+
+// サービスページ
+      .skill{
+        width: 100%;
+        margin-bottom: 100px;
+        &__inner{
+          width: 100%;
+          display: flex;
+          &__box{
+            width: calc( 100% / 3);
+            text-align: center;
+            i{
+              font-size: 70px;
+              margin-bottom: 30px;
+            }
+            &__text{
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .menu{
+        width: 100%;
+        height: auto;
+        &__list{
+          margin: 30px auto;
+          background-color: #2e2d2d05;
+          width: 100%;
+          padding: 30px;
+          &__title{
+            h2{
+              font-size: 2.0rem;
+              font-weight: 600;
+              border-bottom: #2e2d2d solid;
+              // text-align: center;
+            }
+          }
+        }
+        &__item{
+          width: 90%;
+          margin-top: 29px;
+          &__title{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0 10px 10px;
+          }
+        }
+      }
+// 制作物ページ
+      .worksContainer{
+        width: 100%;
+        &__wrapper{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          min-height: 100vh;
+          &__contents{
+            display: inline-block;
+            width: calc( 100% / 3 );
+            height: 300px;
+            &_img{
+              position: relative;
+              width: 100%;
+              height: 40%;
+              overflow: hidden;
+              &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0%;
+                content: '詳細';
+                text-align: center;
+                line-height: 120px;
+                font-family: $gothic;
+                color: #fff;
+                background-color: #0000004b;
+                transition: 0.3s;
+                opacity: 0;
+              }
+              img{
+                object-fit: contain;
+                width: 100%;
+              }
+            }
+            &_text{
+              padding: 10px;
+              .title{
+                text-align: center;
+                font-size: 1.7rem;
+                font-family: $gothic;
+                margin-bottom: 15px;
+              }
+              .subTitle{
+                font-size: 1.5rem;
+                color: #a3a3a3;
+              }
+            }
+            &:hover{
+              box-shadow: #adadad 0px 0px 10px;
+              .worksContainer__wrapper__contents_img{
+                &::before{
+                  opacity: 1;
+                  height: 100%;
+                  transition: 0.2s;
+                }
+              }
+            }
+          }
+        }
+      }
+// 私についてページ
+      .profileContainer,
+      .careerContainer,
+      .hobbyContainer{
+        width: 100%;
+        height: 70vh;
+        margin-bottom: 50px;
+      }
+      .profileContainer{
+        &__table{
+          width: 80%;
+          margin: auto;
+          // background-color: #a3a3a3;
+          tr{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 50px;
+          }
+          th{
+            text-align: left;
+            width: 200px;
+            font-size: 1.5rem;
+          }
+          td{
+            width: 300px;
+            text-align: center;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .careerContainer{
+        width: 100%;
+        margin-bottom: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        &__item{
+          position: relative;
+          display: inline-block;
+          margin-bottom: 50px;
+          padding-left: 100px;
+          font-size: 1.5rem;
+          &::before{
+            position: absolute;
+            top: 50%;
+            left: 69px;
+            background-color: $mainColor;
+            content: '';
+            width: 3px;
+            height: 3px;
+            border-radius: 50％;
+          }
+          &:last-child{
+            position: relative;
+            font-weight: 600;
+          }
+        }
+      }
+      .hobbyContainer{
+        li{
+          margin-bottom: 50px;
+          font-size: 1.5rem;
+          text-align: center;
+          &:first-child{
+            font-size: 2.0rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+//フッダー//
+.footer{
+  background-color: $footerColor;
+  p{
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 31px 0;
+  }
+}
+
+// リターンボタン
+.return{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: $mainColor;
+  text-align: center;
+  cursor: pointer;
+  .bk{
+    position: relative;
+    &:before{
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      transform: scale(0,0);
+      transition: .3s;
+    }
+    i{
+      line-height: 80px;
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+  &:hover{
+    .bk{
+      &:before{
+        transform: scale(1,1);
+        transition: .3s;
+      }
+    }
+    i{
+      color: $mainColor
+    }
+  }
+}
+
+//////*789px以下*//////
+@media screen and (max-width: 789px) {}
+
+
+///////*600px以下*///////
+@media screen and (max-width: 600px) {}
