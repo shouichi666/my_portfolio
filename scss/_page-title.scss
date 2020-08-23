@@ -1,0 +1,26 @@
+/*
+ページタイトル
+*/
+
+.pageTitle{
+  grid-area: page-title;
+  position: fixed;
+  z-index: -1;
+  top: 450px;
+  left: 16.9%;
+  width: calc( 100% / 3 );
+  height: 50vh;
+  img{
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 23%;
+  }
+  &__heading{
+    font-size: 3.5rem;
+  }
+  &__text{
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
