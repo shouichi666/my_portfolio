@@ -13,135 +13,209 @@
   <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-  <div class="container">    
-      <!-- ヘッダー -->
-        <header id="header" class="header">
-          <div class="logo">Shoichi<br>Portfolio</div>
-          <div class="logoText">Simple is best</div>
-        </header>
-        
-      <!-- PCナビゲーション -->
-      <nav id="gnav" class="gnav">
-        <ul class="gnav__mainNav">
-          <li class="gnav__mainNav__nav1"><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
-          <li class="gnav__mainNav__nav1"><a href="./survice.html"><i class="fas fa-hands-helping"></i>サービス</a>
-            <ul class="gnav__subNav">
-              <li class="gnav__subNav__nav2"><a href="./survice.html#skill">SLILL<br>できること</a></li>
-              <li class="gnav__subNav__nav2"><a href="./survice.html#menu">MENU<br>料金表</a></li>
-            </ul>
-          </li>
-          <li class="gnav__mainNav__nav1"><a href="./works.html"><i class="fas fa-file"></i>制作物</a>
-            <ul class="gnav__subNav">
-              <li class="gnav__subNav__nav2"><a href="./works.html#all">すべて</a></li>
-              <li class="gnav__subNav__nav2"><a href="./works.html#web">Web制作</a></li>
-              <li class="gnav__subNav__nav2"><a href="./works.html#lp">LP</a></li>
-            </ul>
-          </li>
-          <li class="gnav__mainNav__nav1"><a href="./about.html"><i class="fas fa-user"></i>私について</a>
-            <ul class="gnav__subNav">
-              <li class="gnav__subNav__nav2"><a href="./about.html#profile">プロフィール</a></li>
-              <li class="gnav__subNav__nav2"><a href="./about.html#career">経歴</a></li>
-              <li class="gnav__subNav__nav2"><a href="./about.html#hobby">趣味</a></li>
-            </ul>
-          </li>
-          <li class="gnav__mainNav__nav1"><a href="./contact.html"><i class="fas fa-envelope-open"></i>お問い合わせ</a></li>
+<div class="container">    
+
+  <!-- ヘッダー -->
+    <header id="header" class="header">
+      <div class="logo">Shoichi<br>Portfolio</div>
+      <div class="logoText">Simple is best</div>
+    </header>
+    
+  <!-- PCナビゲーション -->
+  <nav id="gnav" class="gnav">
+    <ul class="gnav__mainNav">
+      <li class="gnav__mainNav__nav1"><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+      <li class="gnav__mainNav__nav1"><a href="./survice.html"><i class="fas fa-hands-helping"></i>サービス</a>
+        <ul class="gnav__subNav">
+          <li class="gnav__subNav__nav2"><a href="./survice.html#skill">SLILL<br>できること</a></li>
+          <li class="gnav__subNav__nav2"><a href="./survice.html#menu">MENU<br>料金表</a></li>
         </ul>
-      </nav>
-        
+      </li>
+      <li class="gnav__mainNav__nav1"><a href="./works.html"><i class="fas fa-file"></i>制作物</a>
+        <ul class="gnav__subNav">
+          <li class="gnav__subNav__nav2"><a href="./works.html#all">すべて</a></li>
+          <li class="gnav__subNav__nav2"><a href="./works.html#web">Web制作</a></li>
+          <li class="gnav__subNav__nav2"><a href="./works.html#lp">LP</a></li>
+        </ul>
+      </li>
+      <li class="gnav__mainNav__nav1"><a href="./about.html"><i class="fas fa-user"></i>私について</a>
+        <ul class="gnav__subNav">
+          <li class="gnav__subNav__nav2"><a href="./about.html#profile">プロフィール</a></li>
+          <li class="gnav__subNav__nav2"><a href="./about.html#career">経歴</a></li>
+          <li class="gnav__subNav__nav2"><a href="./about.html#hobby">趣味</a></li>
+        </ul>
+      </li>
+      <li class="gnav__mainNav__nav1"><a href="./contact.html"><i class="fas fa-envelope-open"></i>お問い合わせ</a></li>
+    </ul>
+  </nav>
+    
 
-      <!-- ページタイトル -->
-        <article class="pageTitle">
-          <img src="./img/gear.jpg" alt="">
-          <h1 class="pageTitle__heading">制作物</h1>
-          <p class="pageTitle__text">WORKS<br>制作物をまとめました。</p>
-        </article>
+  <!-- ページタイトル -->
+    <article class="pageTitle">
+      <img src="./img/gear.jpg" alt="">
+      <h1 class="pageTitle__heading">制作物</h1>
+      <p class="pageTitle__text">WORKS<br>制作物をまとめました。</p>
+    </article>
 
 
-      <!-- メインエリア -->
-        <article class="contentsArea">
-          <section class="contentsArea__contents">
-            <ul class="contentsArea__contents__tabNav">
-                <li class="contentsArea__contents__tabNav_tab"><a class="show" href="#all"><span class="line"></span>ALL</a></li>
-                <li class="contentsArea__contents__tabNav_tab"><a href="#web"><span class="line"></span>WEB</a></li>
-                <li class="contentsArea__contents__tabNav_tab"><a href="#lp"><span class="line"></span>LP</a></li>
-            </ul>
-            <div class="contentsArea__contents__mainContents">
-              <article class="worksContainer">
-                <h1 id="all" class="contentsHeading">ALL</h1>
-                <span class="contentsSubheading">すべて</span>
-                <div class="worksContainer__wrapper">
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/sukima.png" alt="sukima">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">Smart資格</p>
-                      <span class="subTitle">クラウドワークスからの案件です。<br>トップページ、下層ページのコーディングを担当しました。制作期間は3日です。</span>
-                    </div>
-                  </a>
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/isaratop.png" alt="">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">イサラ</p>
-                      <span class="subTitle">LPイサラの模写です。制作期間は4日です。</span>
-                    </div>
-                  </a>
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/localhost_wordpress_ (1).png" alt="">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">MOUNTAIN BOOKERS</p>
-                      <span class="subTitle">オリジナルのサイトです。WORDPLESS化をしております。</span>
-                    </div>
-                  </a>
+  <!-- メインエリア -->
+    <article class="contentsArea">
+      <section class="contentsArea__contents">
+        <ul class="contentsArea__contents__tabNav">
+            <li class="contentsArea__contents__tabNav_tab"><a class="show" href="#all"><span class="line"></span>ALL</a></li>
+            <li class="contentsArea__contents__tabNav_tab"><a href="#web"><span class="line"></span>WEB</a></li>
+            <li class="contentsArea__contents__tabNav_tab"><a href="#lp"><span class="line"></span>LP</a></li>
+        </ul>
+        <div class="contentsArea__contents__mainContents">
+          <article class="worksContainer">
+            <h1 id="all" class="contentsHeading">ALL</h1>
+            <span class="contentsSubheading">すべて</span>
+            <div class="worksContainer__wrapper">
+              <div data-target="sukimaSmart" class="worksContainer__wrapper__contents">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/sukima.png" alt="sukima">
                 </div>
-              </article>
-              <article class="worksContainer">
-                <h1 id="web" class="contentsHeading">WEB</h1>
-                <span class="contentsSubheading">模写を含めたWEB制作一覧</span>
-                <div class="worksContainer__wrapper">
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/sukima.png" alt="sukima">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">Smart資格</p>
-                      <span class="subTitle">クラウドワークスからの案件です。<br>トップページ、下層ページのコーディングを担当しました。制作期間は3日です。</span>
-                    </div>
-                  </a>
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/localhost_wordpress_ (1).png" alt="">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">MOUNTAIN BOOKERS</p>
-                      <span class="subTitle">オリジナルのサイトです。WORDPLESS化をしております。</span>
-                    </div>
-                  </a>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">Smart資格</p>
+                  <span class="subTitle">クラウドワークスからの案件です。<br>トップページ、下層ページのコーディングを担当しました。制作期間は3日です。</span>
                 </div>
-              </article>
-              <article class="worksContainer">
-                <h1 id="lp" class="contentsHeading">LP</h1>
-                <span class="contentsSubheading">模写を含めたLPの一覧です。</span>
-                <div class="worksContainer__wrapper">
-                  <a href="#" class="worksContainer__wrapper__contents">
-                    <div class="worksContainer__wrapper__contents_img">
-                      <img src="./img/works/isaratop.png" alt="">
-                    </div>
-                    <div class="worksContainer__wrapper__contents_text">
-                      <p class="title">イサラ</p>
-                      <span class="subTitle">LPイサラの模写です。制作期間は4日です。</span>
-                    </div>
-                  </a>
+              </div>
+              <div data-target="isara" class="worksContainer__wrapper__contents">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/isaratop.png" alt="">
                 </div>
-              </article>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">イサラ</p>
+                  <span class="subTitle">LPイサラの模写です。制作期間は4日です。</span>
+                </div>
+              </div>
+              <div data-target="mb" class="worksContainer__wrapper__contents mb">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/localhost_wordpress_ (1).png" alt="">
+                </div>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">MOUNTAIN BOOKERS</p>
+                  <span class="subTitle">オリジナルのサイトです。WORDPLESS化をしております。</span>
+                </div>
+              </div>
             </div>
-          </section>
-        </article>
-  </div> <!-- container -->
+          </article>
+          <article class="worksContainer">
+            <h1 id="web" class="contentsHeading">WEB</h1>
+            <span class="contentsSubheading">模写を含めたWEB制作一覧</span>
+            <div class="worksContainer__wrapper">
+              <div data-target="sukimaSmart" class="worksContainer__wrapper__contents">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/sukima.png" alt="sukima">
+                </div>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">Smart資格</p>
+                  <span class="subTitle">クラウドワークスからの案件です。<br>トップページ、下層ページのコーディングを担当しました。制作期間は3日です。</span>
+                </div>
+              </div>
+              <div data-target="mb" class="worksContainer__wrapper__contents">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/localhost_wordpress_ (1).png" alt="">
+                </div>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">MOUNTAIN BOOKERS</p>
+                  <span class="subTitle">オリジナルのサイトです。WORDPLESS化をしております。</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="worksContainer">
+            <h1 id="lp" class="contentsHeading">LP</h1>
+            <span class="contentsSubheading">模写を含めたLPの一覧です。</span>
+            <div class="worksContainer__wrapper">
+              <div data-target="isara" class="worksContainer__wrapper__contents">
+                <div class="worksContainer__wrapper__contents_img">
+                  <img src="./img/works/isaratop.png" alt="">
+                </div>
+                <div class="worksContainer__wrapper__contents_text">
+                  <p class="title">イサラ</p>
+                  <span class="subTitle">LPイサラの模写です。制作期間は4日です。</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </article>
+
+</div> <!-- container -->
+
+<!-- モーダル -->
+<article id="isara" class="modal">
+  <div class="modal__bk">
+    <div class="modal__contents">
+      <section class="modal__contents__imgContainer">
+        <img src="./img/works/isaratop.png" alt="">
+      </section>
+      <section class="modal__contents__textContainer">
+        <ul class="modal__contents__textContainer__title">
+          <li><h1>タイトル</h1></li>
+        </ul>
+        <dl class="modal__contents__textContainer__text">
+          <dt>製作期間</dt>
+          <dd>9日</dd>
+          <dt>SITE</dt>
+          <dd>URL</dd>
+        </dl>
+      </section>
+      <section class="modal__contents__closeIcon">
+        <span>閉じる</span>
+      </section>
+    </div>
+  </div>
+</article>
+<article id="mb" class="modal">
+  <div class="modal__bk">
+    <div class="modal__contents">
+      <section class="modal__contents__imgContainer">
+        <img src="./img/works/localhost_wordpress_ (1).png" alt="">
+      </section>
+      <section class="modal__contents__textContainer">
+        <ul class="modal__contents__textContainer__title">
+          <li><h1>MOUNTAIN BOOKERS</h1></li>
+        </ul>
+        <dl class="modal__contents__textContainer__text">
+          <dt>製作期間</dt>
+          <dd>9日</dd>
+          <dt>SITE</dt>
+          <dd>URL</dd>
+        </dl>
+      </section>
+      <section class="modal__contents__closeIcon">
+        <span>閉じる</span>
+      </section>
+    </div>
+  </div>
+</article>
+<article id="sukimaSmart" class="modal">
+  <div class="modal__bk">
+    <div class="modal__contents">
+      <section class="modal__contents__imgContainer">
+        <img src="./img/works/sukima.png" alt="">
+      </section>
+      <section class="modal__contents__textContainer">
+        <ul class="modal__contents__textContainer__title">
+          <li><h1>Smart資格</h1></li>
+        </ul>
+        <dl class="modal__contents__textContainer__text">
+          <dt>製作期間</dt>
+          <dd>4日</dd>
+          <dt>SITE</dt>
+          <dd>URL</dd>
+        </dl>
+      </section>
+      <section class="modal__contents__closeIcon">
+        <span>閉じる</span>
+      </section>
+    </div>
+  </div>
+</article>
+
   <footer id="#" class="footer">
     <p>@Shoichi Portfolio</p>
   </footer>
