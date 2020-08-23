@@ -302,10 +302,17 @@ a{
     width: 100%;
     max-width: 100%;
     justify-content: center;
+
     &__tab a{
       padding: 5px;
     }
   }
+  .contentsArea__contents__tabNav.is-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   .contentsArea__contents__mainContents{
   .menu{
     width: 100%;
@@ -355,5 +362,9 @@ a{
 
   .modal{
     width: 100vw;
+  }
+
+  .spNav,.hbIcon{
+    display: block;
   }
 }
