@@ -1,0 +1,99 @@
+/*
+トップページ
+*/
+
+
+#top{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .topHeader{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000000e7;
+    padding: 50px 30px;
+    span{
+      color: #fff;
+      line-height: 10px;
+      font-family: $gothic;
+    }
+  }
+  .topContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    .topContents{
+      position: relative;
+      width: 50%;
+      height: 50%;
+      &:nth-child(1){
+        border-bottom: 0.2px solid #fff;
+      }
+      &:nth-child(2){
+        border-bottom: 0.2px solid #fff;
+      }
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        &::before{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          z-index: 1;
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: #000000f8;
+          transition: .3s;
+        }
+        img{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: contain; 
+          transform: scale(0.5,0.5);
+          transition: .1s;
+          filter: blur(3px);
+        }
+        p{
+          position: absolute;
+          z-index: 6;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          font-size: 1.1rem;
+          color: #cccccc;
+          text-align: center;
+          i{
+            font-size: 50px;
+          }
+        }
+        &:hover{
+          &::before{
+            width: 150px;
+            height: 150px;
+            transition: .8s;
+            background-color: #000000d3;
+            transform: translate(-50%,-50%) rotateX(225deg);
+            transform-origin: center;
+          }
+          img{
+            transition: .3s;
+            transform: scale(0.9,0.9);
+            filter: blur(0px);
+          }
+          p{
+            color: #eeeeee;
+          }
+        }
+      }
+    }
+  }
+
+}
