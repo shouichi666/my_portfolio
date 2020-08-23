@@ -37,7 +37,6 @@ $(function(){
   });
 });
 
-
 $(function(){
   let clickBtn = $('.worksContainer__wrapper__contents');
   let closeBtn = $('.modal__contents__closeIcon');
@@ -54,3 +53,37 @@ $(function(){
 
   });
 });
+
+$(function(){
+ let nav = $('.contentsArea__contents__tabNav');
+  let navHeight = nav.outerHeight();
+  let navPos = nav.offset().top;
+  const fixed = 'is-fixed';
+ $(window).on('load scroll',function(){
+  let value = $(this).scrollTop();
+
+  if( value > navPos ){
+    nav.addClass(fixed);
+  } else {
+    nav.removeClass(fixed);
+  }
+
+ });
+});
+
+$(function(){
+  let icon = $('.hbIcon');
+  let spNav =$('.spNav');
+
+icon.on('click',function(){
+  if( $(this).hasClass('is-show') ){
+    icon.removeClass('is-show');
+    spNav.removeClass('is-show');
+  } else {
+    icon.addClass('is-show');
+    spNav.addClass('is-show');
+  }
+});
+
+
+}); 
