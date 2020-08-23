@@ -66,52 +66,60 @@
         &::before{
           transform: translateX(0);
         }
-        .gnav__subNav{
-          display: flex;
-          position: absolute;
-          top: -0.7px;
-          left: 79px;
-          background-color: $subNavColor;
-          &__nav2{
-            a{
-              position: relative;
-              color: #fff;
-              background-color: $subNavColor;
-              display: inline-block;
-              width: 90px;
-              height: 80px;
-              padding-top: 30px;
-              line-height: 10px;
-              &::before{
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: '';
-                width: 100%;
-                height: 100%;
-                background-color: #ffffff21;
-                transform: scale(0,0);
-                transform-origin: center;
-                transition: .3s;
-              }//before
-            }
-            &:hover{
-              a{
-                color: yellow;
-                // color: $gnavColor;
-                &::before{
-                  transform: scale(1,1);
-                  transition: .3s;
-                }
-              }
-            }
-          }
-        }
-      }//hover
+       }//hover
     }
   }
   &__subNav{
-    display: none;
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    top: -0.7px;
+    left: 79px;
+    transform: translateX(-500px);
+    transition: .3s;
+    background-color: $subNavColor;
+    &__nav2{
+      a{
+        position: relative;
+        background-color: $subNavColor;
+        display: inline-block;
+        width: 90px;
+        height: 80px;
+        padding-top: 30px;
+        line-height: 10px;
+        &::before{
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: #ffffff21;
+          transform: scale(0,0);
+          transform-origin: center;
+          transition: .3s;
+        }//before
+      }
+      &:hover{
+        a{
+          color: yellow;
+          &::before{
+            transform: scale(1,1);
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
+  &__mainNav__nav1:hover{
+    .gnav__subNav{
+      transform: translateX(0);
+      &__nav2{
+        a{
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
