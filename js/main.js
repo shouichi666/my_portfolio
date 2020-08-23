@@ -1,7 +1,3 @@
-// $(function(){
-
-// });
-
 $(function(){
   $('a[href^="#"]').click(function() {
     // スクロールの速度
@@ -15,14 +11,6 @@ $(function(){
     return false;
    });
   });
-
-// $(function(){
-//   let tab = $('.contentsArea__contents__tabNav_tab a');
-//   $(tab).on('click',function(){
-//     tab.removeClass('show');
-//      $(this).addClass('show');
-//   });
-// });
 
 $(function(){
   $(window).scroll(function (){
@@ -49,13 +37,20 @@ $(function(){
   });
 });
 
-// $(function(){
-//   let href = $(this).attr('href');
-//   let target = $(href == "#");
-//   let position = target.offset().top;
-//   $(window).scroll(function(){
-//     if((window).scrollTop() > 300){
-//       alert();
-//     } 
-//   });
-// });
+
+$(function(){
+  let clickBtn = $('.worksContainer__wrapper__contents');
+  let closeBtn = $('.modal__contents__closeIcon');
+
+  clickBtn.click(function(){
+    let target = $(this).data('target');
+    let modal = document.getElementById(target);
+    $(modal).addClass('open');
+    // modal.fadeIn();
+
+    closeBtn.click(function(){
+      $(modal).removeClass('open');
+    });
+
+  });
+});
