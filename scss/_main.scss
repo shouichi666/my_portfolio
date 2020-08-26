@@ -301,6 +301,113 @@
           // }
         }
       }
+// お問い合わせ
+      .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        &__inpField{
+          position: relative;
+          width: 90%;
+          margin: 20px auto;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          // background-color: aquamarine;
+          label{
+            position: relative;
+            display: inline-block;
+            width: 25%;
+            &:before{
+              position: absolute;
+              left: -20px;
+              content: '';
+              width: 5px;
+              height: 25px;
+              background-color: #2e2d2d;
+            }
+          }
+
+          input,textarea{
+            width: 80%;
+            min-width: 250px;
+            padding: 5px 8px;
+            outline: none;
+            border: none;
+            box-shadow: black 1px 1px 3px;
+            transition: .5s;
+            &:focus{
+              width: 90%;
+              border-radius: 10px;
+              transition: .5s;
+            }
+            &::placeholder{
+              font-size: 1.2rem;
+            }
+          }
+          textarea{
+            height: 150px;
+           
+          }
+          .attention{
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            color: red;
+            font-size: 10px;
+            font-family: $gothic;
+          }
+        }//inpFiled
+        .btn{
+          position: relative;
+          width: 70%;
+          height: 40px;
+          input[type="submit"]{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background-color: $mainColor; 
+            border: none;
+            transition: .2s;
+          }
+          &::before,&:after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: $mainColor;
+            transition: .5s;
+          }
+          &::before{
+            top: 0;
+            left: 0;
+          }
+          &::after{
+            bottom: 0;
+            right: 0;
+          }
+          &:hover{
+            background-color: #fff;
+            border-left: $mainColor solid 2px;
+            border-right: $mainColor solid 2px;
+            input[type="submit"]{
+              color: $mainColor;
+              background-color: #fff; 
+              transition: .2s;
+            }
+            &::before{
+              width: 100%;
+              transition: .5s;
+            }
+            &::after{
+              width: 100%;
+              transition: .5s;
+            }
+          }
+        }//btn
+      }//form
     }
   }
 }
