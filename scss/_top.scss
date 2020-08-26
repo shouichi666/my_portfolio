@@ -13,10 +13,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #000000e7;
+    background-color: #fff;
     padding: 50px 30px;
     span{
-      color: #fff;
+      color: $mainColor;
       line-height: 10px;
       font-family: $gothic;
     }
