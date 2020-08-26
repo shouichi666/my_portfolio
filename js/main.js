@@ -1,3 +1,4 @@
+// スクロールアニメーション
 $(function(){
   $('a[href^="#"]').click(function() {
     // スクロールの速度
@@ -11,7 +12,7 @@ $(function(){
     return false;
    });
   });
-
+//リターンボタン
 $(function(){
   $(window).scroll(function (){
     let target = $('.contentsHeading')
@@ -36,10 +37,10 @@ $(function(){
     }
   });
 });
-
+//モーダル
 $(function(){
   let clickBtn = $('.worksContainer__wrapper__contents');
-  let closeBtn = $('.modal__contents__closeIcon');
+  let closeBtn = $('.modal__bk__closeIcon');
 
   clickBtn.click(function(){
     let target = $(this).data('target');
@@ -53,24 +54,28 @@ $(function(){
 
   });
 });
-
+//タブ
 $(function(){
- let nav = $('.contentsArea__contents__tabNav');
-  let navHeight = nav.outerHeight();
+  let nav = $('.contentsArea__contents__tabNav');
+  let Icon = $('.hbIcon');
   let navPos = nav.offset().top;
   const fixed = 'is-fixed';
+  const down = 'is-down';
+
  $(window).on('load scroll',function(){
   let value = $(this).scrollTop();
 
   if( value > navPos ){
     nav.addClass(fixed);
+    Icon.addClass(down);
   } else {
     nav.removeClass(fixed);
+    Icon.removeClass(down);
   }
 
  });
 });
-
+//spナビゲーション
 $(function(){
   let icon = $('.hbIcon');
   let spNav =$('.spNav');
@@ -87,3 +92,7 @@ icon.on('click',function(){
 
 
 }); 
+//コンタクト
+// $(function() {
+
+// });
