@@ -925,6 +925,10 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  background-image: url("../img/mail.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .contentsArea__contents__mainContents .form__inpField {
