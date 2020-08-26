@@ -61,14 +61,37 @@
   <!-- メインエリア -->
     <article class="contentsArea">
       <section class="contentsArea__contents">
-        <!-- <ul class="contentsArea__contents__tabNav">
-            <li class="contentsArea__contents__tabNav_tab show"><a href="#"><span class="line"></span>tab</a></li>
-            <li class="contentsArea__contents__tabNav_tab"><a href="#"><span class="line"></span>tab</a></li>
-            <li class="contentsArea__contents__tabNav_tab"><a href="#"><span class="line"></span>tab</a></li>
-            <li class="contentsArea__contents__tabNav_tab"><a href="#"><span class="line"></span>tab</a></li>
-        </ul> -->
         <div class="contentsArea__contents__mainContents">
-          現在作成中
+          <form action="#" class="form">
+
+            <div class="form__inpField">
+              <label for="name">お名前</label><br class="spOn">
+              <input type="text" placeholder="山田　太郎" name="name" id="name">
+              <span class="attention"> ※入力して下さい。</span>
+            </div> <!--form__inpField -->
+
+            <div class="form__inpField">
+              <label for="tel">電話番号</label><br class="spOn">
+              <input type="tel" placeholder="000-1111-2222" name="tel" id="tel">
+              <span class="attention"> ※入力して下さい。</span>
+            </div> <!--form__inpField -->
+
+            <div class="form__inpField">
+              <label for="email">メールアドレス</label><br class="spOn">
+              <input type="email" placeholder="aaabbbccc@gamil.ccoomm" name="email" id="email">
+              <span class="attention"> ※入力して下さい。</span>
+            </div> <!--form__inpField -->
+
+            <div class="form__inpField">
+              <label for="conment">お問い合わせ</label><br class="spOn">
+              <textarea placeholder="コメント" cols="40" ></textarea>
+            </div> <!--form__inpField -->
+
+            <div class="btn">
+              <input type="submit" value="送信">
+            </div>
+
+          </form>
         </div>
       </section>
     </article>
