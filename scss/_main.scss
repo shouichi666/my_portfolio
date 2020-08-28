@@ -172,9 +172,9 @@
           min-height: 100vh;
 
           &__contents{
-            display: inline-block;
             width: calc( 100% / 3 );
             height: 300px;
+            margin: 0px;
 
             &_img{
               position: relative;
@@ -197,7 +197,7 @@
                 opacity: 0;
               }
               img{
-                object-fit: contain;
+                object-fit: cover;
                 width: 100%;
               }
             }
