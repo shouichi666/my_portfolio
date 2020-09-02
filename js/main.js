@@ -63,11 +63,11 @@ $(function(){
 
 // トップページのみ
 $(function(){
-  if( $('body').attr('id') === 'top' ){
+  if( $('body').attr('id') === 'top' ) {
   
-    $(window).load(function(){
+    // $(window).load(function(){
       $('.loaderWrap').delay(1500).fadeOut();
-    });
+    // });
 
     // $(function(){
       const countElement = $('.persentNum');
