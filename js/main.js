@@ -55,15 +55,21 @@ $(function(){
   });
 });
 
-$(function(){
+
+
+
+
+
+
 // トップページのみ
+$(function(){
   if( $('body').attr('id') === 'top' ){
   
     $(window).load(function(){
       $('.loaderWrap').delay(1500).fadeOut();
     });
 
-    $(function(){
+    // $(function(){
       const countElement = $('.persentNum');
       const countSpeed = 11;
 
@@ -85,9 +91,10 @@ $(function(){
           timer();
       });
 
-    });
+    // });
 // SP時のみ
-  } else if( !$('body').attr('id') === 'top' ){
+  } 
+  else{
     // タブの位置変更
     $(function(){
       let nav = $('.contentsArea__contents__tabNav');
@@ -107,32 +114,21 @@ $(function(){
       }
      });
     });
-
     //spナビゲーション
     $(function(){
       let icon = $('.hbIcon');
       let spNav =$('.spNav');
 
     icon.on('click',function(){
-      if( $(this).hasClass('is-show') ){
-        icon.removeClass('is-show');
-        spNav.removeClass('is-show');
-      } else {
-        icon.addClass('is-show');
-        spNav.addClass('is-show');
-      }
-    });
-
-
+        if( $(this).hasClass('is-show') ){
+          icon.removeClass('is-show');
+          spNav.removeClass('is-show');
+        } else {
+          icon.addClass('is-show');
+          spNav.addClass('is-show');
+        }
+      });
     }); 
-
   }
+
 });
-
-
-
-//コンタクト
-// $(function() {
-
-// });
-
