@@ -1,3 +1,74 @@
+$(function(){
+  $(window).load(function(){
+    $('html').addClass('vue');
+  });
+});
+// トップページのみ
+$(function(){
+  if( $('body').attr('id') === 'top' ) {
+  
+      const countElement = $('.persentNum');
+      const countSpeed = 15;
+      
+      countElement.each(function(){
+        const self = $(this);
+        const numMax = 100;
+        const fadeOut = ('fadeOut');
+        let thisCount = $(this).text();
+
+          function timer(){
+            countTimer = setInterval(function(){
+              let countNext = thisCount++;
+              self.text(countNext);
+              $('.loader').css('width' , countNext + '%');
+              if( countNext === numMax ){
+                clearInterval(countTimer);
+                $('.loaderWrap').addClass(fadeOut);
+              }
+            }, countSpeed );
+          }
+          timer();
+      });
+  } 
+  else{
+    // タブの位置変更
+    $(function(){
+      let nav = $('.contentsArea__contents__tabNav');
+      let Icon = $('.hbIcon');
+      let navPos = nav.offset().top;
+      const fixed = 'is-fixed';
+      const down = 'is-down';
+     $(window).on('load scroll',function(){
+      let value = $(this).scrollTop();
+    
+      if( value > navPos ){
+        nav.addClass(fixed);
+        Icon.addClass(down);
+      } else {
+        nav.removeClass(fixed);
+        Icon.removeClass(down);
+      }
+     });
+    });
+    //spナビゲーション
+    $(function(){
+      let icon = $('.hbIcon');
+      let spNav =$('.spNav');
+
+    icon.on('click',function(){
+        if( $(this).hasClass('is-show') ){
+          icon.removeClass('is-show');
+          spNav.removeClass('is-show');
+        } else {
+          icon.addClass('is-show');
+          spNav.addClass('is-show');
+        }
+      });
+    }); 
+  }
+
+});
+
 // スクロールアニメーション
 $(function(){
   $('a[href^="#"]').click(function() {
@@ -54,89 +125,4 @@ $(function(){
 
   });
 });
-
-
-
-
-
-
-
-// トップページのみ
-$(function(){
-  if( $('body').attr('id') === 'top' ) {
-  
-    // $(window).load(function(){
-      $('.loaderWrap').delay(1500).fadeOut();
-    // });
-
-    // $(function(){
-      const countElement = $('.persentNum');
-      const countSpeed = 11;
-
-      countElement.each(function(){
-        const self = $(this);
-        const numMax = 100;
-        let thisCount = $(this).text();
-
-          function timer(){
-            countTimer = setInterval(function(){
-              let countNext = thisCount++;
-              self.text(countNext);
-              $('.loader').css('width' , countNext + '%')
-              if( countNext === numMax ){
-                clearInterval(countTimer);
-              }
-            }, countSpeed );
-          }
-          timer();
-      });
-
-    // });
-// SP時のみ
-  } 
-  else{
-    // タブの位置変更
-    $(function(){
-      let nav = $('.contentsArea__contents__tabNav');
-      let Icon = $('.hbIcon');
-      let navPos = nav.offset().top;
-      const fixed = 'is-fixed';
-      const down = 'is-down';
-     $(window).on('load scroll',function(){
-      let value = $(this).scrollTop();
-    
-      if( value > navPos ){
-        nav.addClass(fixed);
-        Icon.addClass(down);
-      } else {
-        nav.removeClass(fixed);
-        Icon.removeClass(down);
-      }
-     });
-    });
-    //spナビゲーション
-    $(function(){
-      let icon = $('.hbIcon');
-      let spNav =$('.spNav');
-
-    icon.on('click',function(){
-        if( $(this).hasClass('is-show') ){
-          icon.removeClass('is-show');
-          spNav.removeClass('is-show');
-        } else {
-          icon.addClass('is-show');
-          spNav.addClass('is-show');
-        }
-      });
-    }); 
-  }
-
-});
-
-
-
-//コンタクト
-// $(function() {
-
-// });
 
