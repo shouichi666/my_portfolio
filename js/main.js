@@ -1,6 +1,7 @@
 
 $(function(){
     $(window).on('load', function(){
+      if()
       $('#loader').fadeOut();
     });
 });
