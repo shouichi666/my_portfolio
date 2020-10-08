@@ -1612,6 +1612,14 @@ a {
   color: white;
 }
 
+.string-loader.hide {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 @media screen and (max-width: 989px) {
   .hobbyContainer li iframe {
     width: 300px;

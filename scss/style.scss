@@ -260,6 +260,10 @@ a{
     color: white;
   }
 }
+.string-loader.hide{
+  transform: translateX(100%);
+  transition: 1s;
+}
 
 //////*989px以下*//////
 @media screen and (max-width: 989px) {

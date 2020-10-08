@@ -1,9 +1,10 @@
 
 $(function(){
-    $(window).on('load', function(){
-      if()
-      $('#loader').fadeOut();
-    });
+      const loader = document.querySelector('.string-loader');
+      window.addEventListener('load' , stopload);
+      function stopload() {
+        loader.classList.add('hide');
+    }
 });
 
 
