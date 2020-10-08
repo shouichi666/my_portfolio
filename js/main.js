@@ -194,11 +194,13 @@ $(function(){
     });
 
     //ローディングタイピング
-    typeWrite({
-          el: '#strings',
-          speed: 100,
-          string: '...Now loading',
-    });
+    setInterval(() => {
+      typeWrite({
+            el: '#strings',
+            speed: 100,
+            string: '...Now loading',
+          });
+    }, 2000);
   } //else
 });
 
