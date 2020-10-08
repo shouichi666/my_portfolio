@@ -5,12 +5,7 @@
 
 html{
   font-size: 62.5%;
-  visibility: hidden;
 }
-html.vue{
-  visibility: visible;
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -30,7 +25,7 @@ a{
 }
 @import '_top';
 
-// ////////////////////////////////下層ページ共通//////////////////////////////////////////////
+//下層ページ共通//////////////////////////////////////
 .container{
   position: relative;
   width: 100%;
@@ -108,7 +103,7 @@ a{
   z-index: 50;
   right: 0;
   top: 0;
-  width: 60%;
+  width: 61%;
   height: 100vh;
   background-color: rgb(255, 255, 255);
   transform: translateX(150%);
@@ -118,6 +113,7 @@ a{
   background-repeat: no-repeat;
   background-position-X: 400px;
   background-position-y: 180px;
+  border: #2e2d2d 1px solid;
 
   &__contents{
     position: relative;
@@ -126,7 +122,7 @@ a{
     padding: 40px;
 
     &__imgContainer{
-      width: 60%;
+      width: 70%;
       max-height: 40%;
       min-width: 250px;
       overflow: hidden;
@@ -247,6 +243,24 @@ a{
   transform: translateX(0);
 }
 
+//ローディング
+.string-loader{
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.918);
+  text-align: center;
+
+  &__strings{
+    line-height: 100vh;
+    font-weight: 700;
+    color: white;
+  }
+}
+
 //////*989px以下*//////
 @media screen and (max-width: 989px) {
   .hobbyContainer li{
@@ -262,8 +276,6 @@ a{
     padding: 50px 20px 0 20px;
   }
 }
-
-
 ///////*600px以下*///////
 @media screen and (max-width: 600px) {
  

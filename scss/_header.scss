@@ -27,4 +27,12 @@
     color: #a3a3a3;
     font-size: 13px;
   }
+  .fa-twitter{
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+    &:hover{
+      color: yellow;
+    }
+  }
 }

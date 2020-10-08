@@ -6,41 +6,45 @@
   <title>Shoichi Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Sawarabi+Gothic&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="./img/fittness.jpg">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script> -->
   <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
+
 </head>
 <body id="top">
   <header class="topHeader">
-    <span>YOKO<br>Portfolio</span>
+    <div class="slide-box"></div>
+    <span class="up">YOKO</span>
+    <span class="dwn">Portfolio</span>
   </header>
 
   <article class="topContainer">
     <section class="topContents">
         <a href="./survice.html">
           <img src="./img/computer.png" alt=""">
-          <p><i class="fas fa-hands-helping"></i><br>サービス</p>
+          <p><i id="js1" class="fas fa-hands-helping"></i><br><span id="typeWrite1"></span></p>
           
         </a>
     </section>
     <section class="topContents">
         <a href="./works.html">
           <img src="./img/gear.jpg" alt="">
-          <p><i class="fas fa-file"></i><br>制作物</p>
+          <p><i id="js2" class="fas fa-file"></i><br><span id="typeWrite2"></span></p>
         </a>
     </section>
     <section class="topContents">
         <a href="./about.html">
           <img src="./img/whisky.jpg" alt="">
-          <p><i class="fas fa-user"></i><br>私について</p>
+          <p><i id="js3" class="fas fa-user"></i><br><span id="typeWrite3"></span></p>
         </a>
     </section>
     <section class="topContents">
         <a href="./contact.html">
           <img src="./img/mail.jpg" alt="">
-          <p><i class="fas fa-envelope-open"></i><br>お問い合わせ</p>
+          <p><i id="js4" class="fas fa-envelope-open"></i><br><span id="typeWrite4"></span></p>
         </a>
     </section>
 
@@ -54,6 +58,6 @@
   <div class="loader"></div>
   <div class="persent"><span class="persentNum"></span>%</div>
 </div>
-  
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 /*
 メインコンテンツ
 */
@@ -5,15 +6,17 @@
   grid-area: main;
   width: 100%;
   height: auto;
+  overflow: hidden;
   &__contents{
     width: 100%;
     background-color: #fff;
+    
 
     &__tabNav{
       position: fixed;
       z-index: 30;
-      width: 100%;
-      max-width: 350px;
+      width: 50%;
+      min-width: 350px;
       display: flex;
       &_tab{
         position: relative;
