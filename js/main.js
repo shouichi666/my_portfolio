@@ -198,7 +198,7 @@ $(function(){
       typeWrite({
             el: '#strings',
             speed: 100,
-            string: '...Now loading',
+            string: '...Now..loading..',
           });
     }, 2000);
   } //else
