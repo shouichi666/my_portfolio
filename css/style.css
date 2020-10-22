@@ -1615,6 +1615,10 @@ a {
   line-height: 100vh;
   font-weight: 700;
   color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .string-loader.hide {
