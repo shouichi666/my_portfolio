@@ -1,15 +1,27 @@
 
-$(function(){
-      const loader = document.querySelector('.string-loader');
-      window.addEventListener('load' , stopload);
-      function stopload() {
-        loader.classList.add('hide');
-    }
-});
+const stringArrey = [
+  {
+    title: 'SURVICE',
+    text : '私ができることをまとめてみました。',
+  },
+  {
+    title: 'WORKS',
+    text : 'これまで製作してきたものです',
+  },
+  {
+    title: 'ABOUT',
+    text : '私についてまとめました。時間があればご覧ください',
+  },
+  {
+    title: 'CONTACT',
+    text : 'お問い合わせ。現在開発中です',
+  }
+]
 
 
 $(function(){
-  /// トップページのみ//////////////////////////////////
+  
+//====== タイピングアニメーション関数 =====
   let typeWrite = (param) => {
     let el = document.querySelector(param.el);
     let speed = param.speed;
@@ -22,76 +34,31 @@ $(function(){
     });
   }
 
-  let delet = (param) => {
-    let el = document.querySelector(param.el);
-    let speed = param.speed;      
-    el.innerText = " ";
-  }
+  
+/*********************     トップページのみ   ***************************/
   if( $('body').attr('id') === 'top' ) {
-    
 
-    const target1 = document.querySelector('#js1');
-    target1.addEventListener('mouseenter', ()=>{
-      typeWrite({
-            el: '#typeWrite1',
-            speed: 100,
-            string: 'サービス',
-          });
-    });
-    target1.addEventListener('mouseout', ()=>{
-      delet({
-            el: '#typeWrite1',
-            speed: 80,
-          });
-    });
+//======= トップページタイピングアニメーション
+    for( let i = 0; i < stringArrey.length; i++){  
+      let n = i+1;
+      let hoverTarget = document.querySelector(`#js${n}`);
+      let stringLine = document.querySelector(`#typeWrite${n}`);
+        hoverTarget.addEventListener('mouseover', ()=>{
+          typeWrite({
+                el: `#typeWrite${n}`,
+                speed: 90,
+                string: stringArrey[i].title,
+              });
+            });
+        hoverTarget.addEventListener('mouseout', ()=>{
+          setTimeout(() => {
+            stringLine.textContent = '';
+          }, 900);
+        });
+    }; //end for
 
-    const target2 = document.querySelector('#js2');
-    target2.addEventListener('mouseenter', ()=>{
-      typeWrite({
-            el: '#typeWrite2',
-            speed: 100,
-            string: '制作物',
-          });
-    });
-    target2.addEventListener('mouseout', ()=>{
-      delet({
-            el: '#typeWrite2',
-            speed: 80,
-          });
-    });
-    
-    const target3 = document.querySelector('#js3');
-    target3.addEventListener('mouseenter', ()=>{
-      typeWrite({
-            el: '#typeWrite3',
-            speed: 100,
-            string: '私について',
-          });
-    });
-    target3.addEventListener('mouseout', ()=>{
-      delet({
-            el: '#typeWrite3',
-            speed: 10,
-          });
-    });
-    
-    const target4 = document.querySelector('#js4');
-    target4.addEventListener('mouseenter', ()=>{
-      typeWrite({
-            el: '#typeWrite4',
-            speed: 98,
-            string: 'お問い合わせ',
-          });
-    });
-    target4.addEventListener('mouseout', ()=>{
-      delet({
-            el: '#typeWrite4',
-            speed: 10,
-          });
-    });
-
-
-    const countElement = $('.persentNum');
+//======= ローディング画面
+    const countElement = $('.persentNum');    
     const countSpeed = 13;
     countElement.each(function(){
       const self = $(this);
@@ -113,11 +80,12 @@ $(function(){
       timer();
     });
   } 
-  else 
-/////ここから下層ページ/////////////////////
+
+  else ///******************   ここから下層ページ     *******************///
   {
-    // タブの位置変更
-    let nav = $('.contentsArea__contents__tabNav');
+
+//======= タブの位置変更
+    let nav = $('.contentsArea__contents__tabNav'); 
     let Icon = $('.hbIcon');
     let navPos = nav.offset().top;
     const fixed = 'is-fixed';
@@ -134,8 +102,8 @@ $(function(){
         }
      });
 
-    //spナビゲーション
-    let icon = $('.hbIcon');
+//======= spナビゲーション
+    let icon = $('.hbIcon');  
     let spNav =$('.spNav');
     icon.on('click',function(){
         if( $(this).hasClass('is-show') ){
@@ -146,9 +114,9 @@ $(function(){
           spNav.addClass('is-show');
         }
     });
-    
-    // スクロールアニメーション
-    $('a[href^="#"]').click(function() {
+
+//======= スクロールアニメーション
+    $('a[href^="#"]').click(function() {  
       // スクロールの速度
       var speed = 550; // ミリ秒で記述
       var href = $(this).attr("href");
@@ -160,8 +128,8 @@ $(function(){
       return false;
      });
 
-    //リターンボタン
-    $(window).scroll(function (){
+//======= リターンボタン
+    $(window).scroll(function (){ 
       let target = $('.contentsHeading')
       let tab = $('.contentsArea__contents__tabNav_tab a');
       let returnBtn = $('.return');
@@ -182,7 +150,7 @@ $(function(){
       }
     });
 
-    //モーダル
+//======= モーダル
     let clickBtn = $('.worksContainer__wrapper__contents');
     let closeBtn = $('.modal__bk__closeIcon');
     clickBtn.click(function(){
@@ -195,26 +163,27 @@ $(function(){
       });
     });
 
-    //ローディングタイピング
-    setInterval(() => {
-      typeWrite({
-            el: '#strings',
-            speed: 100,
-            string: '...Now..loading..',
-          });
-    }, 2000);
-  } //else
-});
+//======= ローディングタイピング
+  typeWrite({
+        el: '#strings',
+        speed: 100,
+        string: '...Now loading..',
+  });
 
-$(function() {
-  if( $(window).width() > 600 ){
+//======= ローディング画面
+    const loader = document.querySelector('.string-loader');  
+    window.addEventListener('load' , stopload);
+    function stopload() {
+      loader.classList.add('hide');
+  }
+
+//======= レスポンシブ対応時ヘッダーのパララックス
+  if( $(window).width() > 600 ){  
     const header = $('#header');
-    const post = header.offset().top;
     const focter = 1.5;
     let windowHeight = $(window).height();
     $(window).on( 'scroll', function(){
       let scrollY = $(this).scrollTop();
-      console.log(post);
       if(scrollY > windowHeight){
         header.hide();
       } else {
@@ -222,8 +191,35 @@ $(function() {
         header.css('transform', 'translateX('+ -scrollY*focter +'px)');
       }
     });
-
   }
+
+//======= ページタイトルタイピングアニメーション
+  for( let i = 0; i < stringArrey.length; i++){
+    let tpTitile = document.querySelector(`#typeTitle${i}`);
+    let tpText = document.querySelector(`#typeText${i}`);
+
+    if(tpTitile != null && tpText != null){
+
+      setTimeout( () => {
+        typeWrite({
+          el: `#typeTitle${i}`,
+          speed: 100,
+          string: stringArrey[i].title,
+        });
+      }, 2000);
+      setTimeout(() => {
+        typeWrite({
+          el: `#typeText${i}`,
+          speed: 100,
+          string: stringArrey[i].text,
+        });
+      } ,3000);
+    }
+    
+  }
+
+
+  } //else
 });
 
 

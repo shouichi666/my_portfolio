@@ -845,10 +845,15 @@ a {
 
 .pageTitle__heading {
   font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.pageTitle__title {
+  font-size: 1.5rem;
 }
 
 .pageTitle__text {
-  margin-top: 10px;
+  width: 200px;
   font-size: 1.5rem;
 }
 
