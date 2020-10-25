@@ -173,14 +173,13 @@ $(function(){
 //======= ローディング画面
     const loader = document.querySelector('.string-loader');  
 
-    if( window.onload > 5000) {
-        loader.classList.add('hide');
-    } else {
-      window.addEventListener('load' , stopload);
-      function stopload() {
-        loader.classList.add('hide');
-      }
+    const stopLoad = () => {
+      loader.classList.add('hide');
     }
+
+    window.addEventListener('load' , stopLoad);
+
+    setTimeout(stopLoad(), 5000);
 
 //======= レスポンシブ対応時ヘッダーのパララックス
   if( $(window).width() > 600 ){  
