@@ -172,13 +172,17 @@ $(function(){
 
 //======= ローディング画面
     const loader = document.querySelector('.string-loader');  
-    window.addEventListener('load' , stopload);
-    function stopload() {
-      loader.classList.add('hide');
-    }
-    setTimeout(timeOut, 10000);
-    const timeOut = () => {
-      loader.classList.add('hide');
+
+    if( window.onload > 5000) {
+      setTimeout(timeOut, 1000);
+      const timeOut = () => {
+        loader.classList.add('hide');
+      }
+    } else {
+      window.addEventListener('load' , stopload);
+      function stopload() {
+        loader.classList.add('hide');
+      }
     }
 
 //======= レスポンシブ対応時ヘッダーのパララックス
