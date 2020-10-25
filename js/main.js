@@ -174,10 +174,7 @@ $(function(){
     const loader = document.querySelector('.string-loader');  
 
     if( window.onload > 5000) {
-      setTimeout(timeOut, 1000);
-      const timeOut = () => {
         loader.classList.add('hide');
-      }
     } else {
       window.addEventListener('load' , stopload);
       function stopload() {
