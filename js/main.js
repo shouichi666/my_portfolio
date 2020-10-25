@@ -175,7 +175,11 @@ $(function(){
     window.addEventListener('load' , stopload);
     function stopload() {
       loader.classList.add('hide');
-  }
+    }
+    setTimeout(timeOut, 10000);
+    const timeOut = () => {
+      loader.classList.add('hide');
+    }
 
 //======= レスポンシブ対応時ヘッダーのパララックス
   if( $(window).width() > 600 ){  
